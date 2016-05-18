@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Converter | {{ block.super }}{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <ul class="breadcrumbs">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'courses:list' %}">Courses</a></li>
+        <li><a href="{% url 'converter:convert' %}">Converter</a></li>
+        {% block breadcrumbs %}{% endblock %}
+    </ul>
+{% endblock %}

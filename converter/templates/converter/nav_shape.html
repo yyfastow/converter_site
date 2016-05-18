@@ -1,0 +1,4 @@
+{% for shape in shapes %} 
+    <li><a href="{% url 'converter:circle' %}">{{ shape.shape }}</a></li>
+{% endfor %}
+

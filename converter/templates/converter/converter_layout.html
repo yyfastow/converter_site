@@ -1,0 +1,14 @@
+{% extends "converter/layout.html" %}
+
+{% block title %}Converter | {% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% block instructions %}{% endblock %}
+        <form action="" method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" class="button">
+        </form>
+    </div>
+{% endblock %}

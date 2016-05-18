@@ -1,11 +1,15 @@
 from django.core.urlresolvers import reverse
 from django.db import models
 
+from django.contrib.auth.models import User
 
 class Course(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
     description = models.TextField()
+    teacher = models.ForeignKey(User)
+    subject = models.CharField(default='', max_length=100)
+    published = models.BooleanField(default=False)
     
     def __str__(self):
         return self.title
@@ -37,7 +41,8 @@ class Text(Step):
 
 class Quiz(Step):
     total_questions = models.IntegerField(default=4)
-    
+    times_taken = models.IntegerField(default=0, editable=False)
+
     class Meta:
         verbose_name_plural = "Quizzes"
 

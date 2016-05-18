@@ -1,6 +1,7 @@
 <!doctype html>
 {% load static from staticfiles %}
 {% load course_extras %}
+{% load converter_extras %}
 <html class="no-js" lang="en">
     <head>
         <meta charset="utf-8">
@@ -24,8 +25,22 @@
                             <li><a href="{% url 'courses:list' %}">See all &rarr;</a></li>
                         </ul>
                     </li>
+                    <li class="has-submenu">
+                        <a href="#">Converter</a>
+                        <ul class="submenu menu vertical" data-submenu role="menu">
+                            {% nav_shape_list %}
+                        </ul>
+                    </li>
                 </ul>
             </section>
+				<section class="top-bar-right">
+					<form action="{% url 'courses:search' %}" method="GET">
+						<ul class="menu">
+							<li><input type="search" name="q"></li>
+							<li><button type="button" class="secondary small button">Search</button></li>
+						</ul>
+					</form>
+				</section>
         </nav>
         {% if messages %}
             <div class="row">
