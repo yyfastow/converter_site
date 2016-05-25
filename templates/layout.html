@@ -19,16 +19,33 @@
                 <ul class="dropdown menu" data-dropdown-menu role="menubar">
                     <li class="menu-text">The Learning Site</li>
                     <li class="has-submenu">
-                        <a href="#">Courses</a>
+                        <a href="{% url 'courses:list' %}">Courses</a>
                         <ul class="submenu menu vertical" data-submenu role="menu">
                             {% nav_courses_list %}
                             <li><a href="{% url 'courses:list' %}">See all &rarr;</a></li>
                         </ul>
                     </li>
                     <li class="has-submenu">
-                        <a href="#">Converter</a>
+                        <a href="{% url 'converter:hello_nuzz' %}">Courses</a>
                         <ul class="submenu menu vertical" data-submenu role="menu">
-                            {% nav_shape_list %}
+                            <li><a href="{% url 'converter:times_two' %}">Times Two</a></li>
+                            <li><a href="{% url 'converter:tempurature' %}">Tempurature</a></li>
+                            <li><a href="{% url 'converter:distance' %}">Distance</a></li>
+                            <li><a href="{% url 'converter:calculator' %}">Calculator</a></li>
+                            <li><a href="{% url 'converter:tipcalc' %}">Tip Calculator</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Shapes</a>
+                        <ul class="submenu menu vertical" data-submenu role="menu">
+                            <li><a href="{% url 'converter:triangle' %}">Triangle</a></li>
+                            <li><a href="{% url 'converter:rectangle' %}">Rectangle</a></li>
+                            <li><a href="{% url 'converter:circle' %}">Circle</a></li>
+                            <li><a href="{% url 'converter:cube' %}">Cube</a></li>
+                            <li><a href="{% url 'converter:sphere' %}">Sphere</a></li>
+                            <li><a href="{% url 'converter:cylinder' %}">Cylinder</a></li>
+                            <li><a href="{% url 'converter:pyramid' %}">Pyramid</a></li>
+                            <li><a href="{% url 'converter:trapezoid' %}">Trapozoid</a></li>
                         </ul>
                     </li>
                 </ul>

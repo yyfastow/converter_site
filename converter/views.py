@@ -147,7 +147,7 @@ def calculator_view(request):
     if request.method == 'POST':
         form = forms.CalculatorForm(request.POST)
         if form.is_valid():
-            data = form.cleaned_data['formula'].split()
+            data = form.cleaned_data['formula']
             num = 0
             total = 0
             sign = ''
